@@ -4,7 +4,9 @@ body {
   font-weight: weight;
   font-style: normal;
 }
-
+hr {
+  color: transparent;
+}
 
 a {
   color: inherit;
