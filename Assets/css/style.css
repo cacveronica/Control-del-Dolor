@@ -4,6 +4,7 @@ body {
   font-weight: weight;
   font-style: normal;
 }
+
 hr {
   color: transparent;
 }
@@ -11,10 +12,14 @@ hr {
 a {
   color: inherit;
   text-decoration: none;
+  transition: 0.3s ease-in-out;
+
 }
 
 a:hover {
-  font-weight: 600;  
+  font-weight: 600;
+    transition: 0.3s ease-in-out;
+
 }
 
 ::selection {
@@ -34,8 +39,8 @@ a:hover {
 }
 
 .imgdesvanecida {
- -webkit-mask-image: linear-gradient(to right, rgba(0,0,0,1) 60%, rgba(0,0,0,0) 100%);
-  mask-image: linear-gradient(to left, rgba(0,0,0,1) 50%, rgba(0,0,0,0) 100%);
+  -webkit-mask-image: linear-gradient(to right, rgba(0, 0, 0, 1) 60%, rgba(0, 0, 0, 0) 100%);
+  mask-image: linear-gradient(to left, rgba(0, 0, 0, 1) 50%, rgba(0, 0, 0, 0) 100%);
 }
 
 .card {
@@ -47,13 +52,18 @@ a:hover {
   box-shadow: 0 10px 20px rgba(174, 95, 149, 0.2);
   transition: box-shadow 0.3s ease-in-out;
   cursor: pointer;
-  color: #001787;  
+  color: #001787;
+}
+.redes{
+  transition: box-shadow 0.3s ease-in-out;
+  cursor: pointer;
 }
 
-.redes:hover{
- box-shadow: 0 10px 20px rgba(174, 95, 149, 0.2);
+.redes:hover {
+  box-shadow: 0 10px 20px rgba(174, 95, 149, 0.2);
   transition: box-shadow 0.3s ease-in-out;
-  cursor: pointer;}
+  cursor: pointer;
+}
 
 .feature-icon {
   width: 4rem;
@@ -67,15 +77,30 @@ a:hover {
   border-radius: .75rem;
 }
 
-.text-shadow-1 { text-shadow: 0 .125rem .25rem rgba(0, 0, 0, .25); }
-.text-shadow-2 { text-shadow: 0 .25rem .5rem rgba(0, 0, 0, .25); }
-.text-shadow-3 { text-shadow: 0 .5rem 1.5rem rgba(0, 0, 0, .25); }
+.text-shadow-1 {
+  text-shadow: 0 .125rem .25rem rgba(0, 0, 0, .25);
+}
+
+.text-shadow-2 {
+  text-shadow: 0 .25rem .5rem rgba(0, 0, 0, .25);
+}
+
+.text-shadow-3 {
+  text-shadow: 0 .5rem 1.5rem rgba(0, 0, 0, .25);
+}
 
 .card-cover {
   background-repeat: no-repeat;
   background-position: center center;
   background-size: cover;
-  mask-image: linear-gradient(to left, rgb(0, 0, 0) 10%, rgba(0,0,0) 100%);
+  mask-image: linear-gradient(to left, rgb(0, 0, 0) 10%, rgba(0, 0, 0) 100%);
+}
+
+.card-efecto {
+  transform: scale(1.02);
+  cursor: pointer;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .feature-icon-small {
@@ -160,6 +185,28 @@ a:hover {
   transform: translateX(-50%) scaleY(1.3) scaleX(0.8);
 }
 
-.img-footer{
+.img-footer {
   width: 18rem;
+}
+
+/*
+ * 💻 EFECTO HOVER PARA PANTALLAS GRANDES (Laptops y más)
+ * Se aplica solo a pantallas con un ancho de 992px o más.
+*/
+@media (min-width: 992px) {
+
+  /* Primero, devolvemos la tarjeta a su estado normal en pantallas grandes */
+  .card-efecto {
+    transform: scale(1);
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
+    /* Sombra base más sutil */
+  }
+
+  /* Luego, aplicamos el efecto "activo" únicamente al pasar el mouse */
+  .card-efecto:hover {
+    box-shadow: 0 10px 20px rgba(174, 95, 149, 0.2);
+    transition: box-shadow 0.3s ease-in-out;
+    cursor: pointer;
+    color: #001787;
+  }
 }
